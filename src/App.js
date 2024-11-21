@@ -1,31 +1,3 @@
-// import React, { useEffect } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { fetchUsers } from './redux/usersSlice';
-// import Loader from './components/Loader';
-// import UserList from './components/UserList';
-
-// const App = () => {
-//   const dispatch = useDispatch();
-//   const { users, status } = useSelector((state) => state.users);
-
-//   useEffect(() => {
-//     dispatch(fetchUsers());
-//     console.log("inside App.js")
-//   }, [dispatch]);
-
-//   return (
-//     <div className="container my-5">
-//       <h1 className="text-center mb-4">User Profiles</h1>
-//       {status === 'loading' && <Loader />}
-//       {status === 'succeeded' && <UserList users={users} />}
-//       {status === 'failed' && <p className="text-danger">Failed to load users. Please try again.</p>}
-//     </div>
-//   );
-// };
-
-// export default App;
-
-
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUsers } from './redux/usersSlice';
