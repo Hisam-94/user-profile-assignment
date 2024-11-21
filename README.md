@@ -1,5 +1,5 @@
 
-# User Profile Assignment
+# User Profile - ExtraaEdge Assignment
 
 A React-based User Management App that displays user profiles fetched from an API. The app allows users to mark profiles as favorites, edit user details via a modal form, and delete user profiles. The app includes a loading indicator, responsive design, and integrates **Ant Design** for styling.
 
