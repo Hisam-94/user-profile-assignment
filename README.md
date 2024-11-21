@@ -1,70 +1,140 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# User Management App
 
-## Available Scripts
+A React-based User Management App that displays user profiles fetched from an API. The app allows users to mark profiles as favorites, edit user details via a modal form, and delete user profiles. The app includes a loading indicator, responsive design, and integrates **Ant Design** for styling.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Displays a list of user profiles with their avatars, name, email, phone, website, and company name.
+- Fetches user data from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/users).
+- Dynamically generates unique avatars for each user using [DiceBear Avatars API](https://dicebear.com/).
+- Implements `Favorite`, `Edit`, and `Delete` functionality for user profiles.
+- Edit user details via a modal form with inputs and labels aligned side-by-side.
+- Includes a loading spinner during data fetching.
+- Fully responsive design for desktop, tablet, and mobile views.
+- Uses Redux Toolkit for state management.
+- Styled with Ant Design for buttons, cards, modals, and icons.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React**: Frontend library for building the user interface.
+- **Redux Toolkit**: For efficient state management.
+- **Ant Design**: For pre-styled UI components.
+- **Axios**: For API requests.
+- **Bootstrap**: Used for grid layout and spacing in some components.
+- **JavaScript (ES6)**: Language used for development.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup Instructions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ensure you have the following installed:
 
-### `npm run eject`
+- [Node.js](https://nodejs.org/) (v16 or later)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Steps to Set Up the Project
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/Hisam-94/user-profile-assignment.git
+   cd user-profile-assignment
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+   or, if using yarn:
+   ```bash
+   yarn install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. **Start the Development Server**
+   ```bash
+   npm start
+   ```
+   or, if using yarn:
+   ```bash
+   yarn start
+   ```
 
-## Learn More
+   The app will be available at [http://localhost:3000](http://localhost:3000).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## API Endpoints
 
-### Code Splitting
+- **User Data**: `https://jsonplaceholder.typicode.com/users`
+- **Avatar Images**: `https://api.dicebear.com/8.x/avataaars/svg?seed={username}`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Folder Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```plaintext
+user-management-app/
+├── public/
+│   ├── index.html          # Main HTML file
+│   └── favicon.ico         # App favicon
+├── src/
+│   ├── components/
+│   │   ├── Loader.jsx      # Spinner Component
+│   │   ├── UserCard.jsx    # User Profile Card
+│   │   └── UserList.jsx    # Component to list all users
+│   ├── redux/
+│   │   ├── store.js        # Redux Store Configuration
+│   │   └── usersSlice.js   # Redux Slice for User State
+│   ├── App.jsx             # Main App Component
+│   ├── index.js            # App Entry Point
+│   └── styles.css          # Custom Styles
+├── package.json            # Project Metadata and Dependencies
+└── README.md               # Project Documentation
+```
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Features in Detail
 
-### Advanced Configuration
+### Favorite Button
+- **UI**: A red outlined heart icon.
+- **Behavior**: Clicking the heart icon toggles it to a filled red heart and adds/removes the user from the "favorites" list.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Edit Modal
+- **UI**: A modal form with inputs for `name`, `email`, `phone`, and `website`.
+- **Behavior**: Labels and input boxes are aligned side-by-side.
 
-### Deployment
+### Delete Button
+- **UI**: A trash bin icon.
+- **Behavior**: Removes the user from the list and displays a success message.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Loading Indicator
+- Displays a spinner until the data is fetched from the API.
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Scripts
+
+| Script         | Description                                |
+|----------------|--------------------------------------------|
+| `npm start`    | Starts the development server.             |
+| `npm run build`| Builds the app for production.             |
+| `npm test`     | Launches the test runner (if tests exist). |
+
+---
+
+## Screenshots
+
+### User List Page
+
+![User List Page](https://via.placeholder.com/800x400?text=Add+your+screenshot+here)
+
+---
+
+
