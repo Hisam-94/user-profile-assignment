@@ -1,5 +1,5 @@
 
-# User Management App
+# User Profile assignment
 
 A React-based User Management App that displays user profiles fetched from an API. The app allows users to mark profiles as favorites, edit user details via a modal form, and delete user profiles. The app includes a loading indicator, responsive design, and integrates **Ant Design** for styling.
 
@@ -24,7 +24,7 @@ A React-based User Management App that displays user profiles fetched from an AP
 - **React**: Frontend library for building the user interface.
 - **Redux Toolkit**: For efficient state management.
 - **Ant Design**: For pre-styled UI components.
-- **Axios**: For API requests.
+- **fetch**: For API requests.
 - **Bootstrap**: Used for grid layout and spacing in some components.
 - **JavaScript (ES6)**: Language used for development.
 
@@ -133,7 +133,7 @@ user-management-app/
 
 ### User List Page
 
-![User List Page](https://via.placeholder.com/800x400?text=Add+your+screenshot+here)
+![User List Page](ExtraaEdge-Assignment.PNG)
 
 ---
 
